@@ -197,21 +197,18 @@
 
     <div id="container-box">
     <div id="section-container">
-        <div class="flex-item sticker" id="img-i">
-                  <!-- @foreach($sticker as $stk)
-                <img class="img-size" src="{{URL::to('storage/images/'.$stk->product_image)}}" alt="" id="{{$loop->index}}" draggable="true"
-             ondragstart="onDragStart(event);">
-             @endforeach -->
+        <div class="flex-item sticker" >
+                  @foreach($sticker as $stk)
+                <img class="img-size" src="{{URL::to('storage/images/'.$stk->product_image)}}" alt="" id="{{$loop->index}}" draggable="true" ondragstart="onDragStart(event);">
+             @endforeach
              
         </div>
-        <div  class="example-dropzone"
-             ondragover="onDragOver(event);"
-         ondrop="onDrop(event);">
+        <div  class="example-dropzone" ondragover="onDragOver(event)"ondrop="onDrop(event)">
          <img src="{{URL::to('storage/images/'.$product[0]->product_image)}}" > 
         </div>
     </div>
     </div>
-        <button onclick="chek()">click me</button>
+        <!-- <button onclick="chek()">click me</button> -->
         <!-- <div id="img-i"></div> -->
 
 </body>
@@ -225,15 +222,16 @@
 
 function onDragStart(event) {
   console.log(event)
-    // event
-    //   .dataTransfer
-    //   .setData('text/plain', event.target.id);
+    event
+      .dataTransfer
+      .setData('text/plain', event.target.id);
   }
 function onDragOver(event) {
     event.preventDefault();
   }
 
   function onDrop(event) {
+    console.log(event)
     const id = event
       .dataTransfer
       .getData('text');
@@ -381,33 +379,33 @@ interact('.drag-drop')
 
 //   
 // 
-function chek(category){
-  let prntNode = document.getElementById("img-i")
-  var first = prntNode.firstElementChild;
-        while (first) {
-            first.remove();
-            first = prntNode.firstElementChild;
-        }
-  console.log(category)
-var page_data = {{ Js::from($sticker) }};
-  let gg =  page_data.filter((ele)=>{
-       return ele.category == category
-    })
-    console.log(gg)
-    for(key in gg){
-      console.log(key)
-    var a = document.createElement('img')
-    a.src = "{{URL::to('storage/images/'.$stk->product_image)}}"
-    a.id = key+'img'
-    a.className = "img-size"
-    a.draggable="true"
-    // a.ondragstart="onDragStart(event);"
-    a.addEventListener("ondragstart",onDragStart(event))
-    let parent = document.getElementById('img-i')
-    parent.appendChild(a)
+// function chek(category){
+//   let prntNode = document.getElementById("img-i")
+//   var first = prntNode.firstElementChild;
+//         while (first) {
+//             first.remove();
+//             first = prntNode.firstElementChild;
+//         }
+//   console.log(category)
+// var page_data = {{ Js::from($sticker) }};
+//   let gg =  page_data.filter((ele)=>{
+//        return ele.category == category
+//     })
+//     console.log(gg)
+//     for(key in gg){
+//       console.log(key)
+//     var a = document.createElement('img')
+//     a.src = "{{URL::to('storage/images/'.$stk->product_image)}}"
+//     a.id = key+'img'
+//     a.className = "img-size"
+//     a.draggable="true"
+//     // a.ondragstart="onDragStart(event);"
+//     a.addEventListener("ondragstart",onDragStart(event))
+//     let parent = document.getElementById('img-i')
+//     parent.appendChild(a)
     
-    }
-}
+//     }
+// }
 
 
 
