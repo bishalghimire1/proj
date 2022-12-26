@@ -10,8 +10,8 @@
 	<meta name="description" content="Soeng Souy : Admin Template">
 	<meta property="og:title" content="Soeng Souy : Admin Template">
 	<meta property="og:description" content="Soeng Souy:Admin Template">
-	<meta property="og:image" content="https://dompet.dexignlab.com/xhtml/social-image.png">
-	<meta name="format-detection" content="telephone=no">
+	<!-- <meta property="og:image" content="https://dompet.dexignlab.com/xhtml/social-image.png"> -->
+	<!-- <meta name="format-detection" content="telephone=no"> -->
 	<!-- PAGE TITLE HERE -->
 	<title> Home Page</title>
 	<!-- FAVICONS ICON -->
