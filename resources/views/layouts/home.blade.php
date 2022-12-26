@@ -26,12 +26,11 @@
 <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
 <div class="container">
     <ul class="navbar-nav d-none d-md-flex mr-auto">
-    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Delivery</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Payment</a></li>
+    <li class="nav-item"><a class="nav-link" href="{{route('user/home')}}">Home</a></li>
+    <!-- <li class="nav-item"><a class="nav-link" href="#">Delivery</a></li>
+    <li class="nav-item"><a class="nav-link" href="#">Payment</a></li> -->
     </ul>
     <ul class="navbar-nav">
-    <li  class="nav-item"><a href="#" class="nav-link"> Call: +0000000000 </a></li>
     <li class="nav-item dropdown">
        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> English </a>
         <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
@@ -49,7 +48,7 @@
 <div class="row align-items-center">
   <div class="col-lg-2 col-6">
     <a href="#" class="brand-wrap">
-      Company Name
+      ShareWare Nepal
     </a> <!-- brand-wrap.// -->
   </div>
   <div class="col-lg-6 col-12 col-sm-12">
@@ -58,7 +57,8 @@
           <input type="text" class="form-control" placeholder="Search">
           <div class="input-group-append">
             <button class="btn btn-primary" type="submit">
-              <i class="fa fa-search"></i>
+              <!-- <i class="fa fa-search"></i> -->
+              search
             </button>
           </div>
         </div>
@@ -102,7 +102,12 @@
             @endforeach
             <a class="dropdown-item" href="#">Home interior</a>
           </div>
-      
+       </ul>
+          @foreach($category as $cat)
+          <ul>
+            <a class="dropdown-item" href="{{ route('product.category', $cat) }}">{{$cat}}</a>
+            </ul>
+            @endforeach
     </div> <!-- collapse .// -->
   </div> <!-- container .// -->
 </nav>
@@ -319,7 +324,7 @@
 
 
 <!-- ========================= SECTION  ========================= -->
-<section class="section-name padding-y">
+<!-- <section class="section-name padding-y">
 <div class="container">
 
 <h3 class="mb-3">Download app demo text</h3>
@@ -327,8 +332,8 @@
 <a href="#"><img src="assets/images/misc/appstore.png" height="40"></a>
 <a href="#"><img src="assets/images/misc/appstore.png" height="40"></a>
 
-</div><!-- container // -->
-</section>
+</div>
+</section> -->
 <!-- ========================= SECTION  END// ======================= -->
 
 

@@ -108,12 +108,11 @@
         <nav class="navbar navbar-dark navbar-expand p-0 bg-primary">
             <div class="container">
                 <ul class="navbar-nav d-none d-md-flex mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Delivery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('user/home')}}">Home</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#">Delivery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Payment</a></li> -->
                 </ul>
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link"> Call: +0000000000 </a></li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"> English </a>
                         <ul class="dropdown-menu dropdown-menu-right" style="max-width: 100px;">
@@ -131,7 +130,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2 col-6">
                         <a href="#" class="brand-wrap">
-                            Company Name
+                            ShareWare Nepal
                         </a> <!-- brand-wrap.// -->
                     </div>
                     <div class="col-lg-6 col-12 col-sm-12">
@@ -140,7 +139,8 @@
                                 <input type="text" class="form-control" placeholder="Search">
                                 <div class="input-group-append">
                                     <button class="btn btn-primary" type="submit">
-                                        <i class="fa fa-search"></i>
+                                        <!-- <i class="fa fa-search"></i> -->
+                                        search
                                     </button>
                                 </div>
                             </div>
@@ -178,15 +178,21 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link pl-0" data-toggle="dropdown" href="#"><strong> <i class="fa fa-bars"></i> All category</strong></a>
                             <div class="dropdown-menu" >
-                                @foreach($category as $cat)
-                                <a class="dropdown-item"  onclick="chek('{{$cat}}')">{{$cat}}</a>
+                                 @foreach($category as $cat)
+                                <a class="dropdown-item">{{$cat}}</a>
 
-                                @endforeach
+                                @endforeach 
                                
                             </div>
+                    
                       
                         
                     </ul>
+                    @foreach($category as $cat)
+          <ul>
+            <a class="dropdown-item" href="{{ route('product.category', $cat) }}">{{$cat}}</a>
+            </ul>
+            @endforeach
                 </div> <!-- collapse .// -->
             </div> <!-- container .// -->
         </nav>
@@ -206,9 +212,11 @@
         <div  class="example-dropzone" ondragover="onDragOver(event)"ondrop="onDrop(event)">
          <img src="{{URL::to('storage/images/'.$product[0]->product_image)}}" > 
         </div>
+      </div>
+      <div style="display:flex;justify-content:center; margin-top:3rem">
+      <button class="btn btn-primary" style="width:30rem;">Save</button>
+      </div>
     </div>
-    </div>
-        <!-- <button onclick="chek()">click me</button> -->
         <!-- <div id="img-i"></div> -->
 
 </body>
@@ -377,35 +385,35 @@ interact('.drag-drop')
 
 
 
-//   
-// 
-// function chek(category){
-//   let prntNode = document.getElementById("img-i")
-//   var first = prntNode.firstElementChild;
-//         while (first) {
-//             first.remove();
-//             first = prntNode.firstElementChild;
-//         }
-//   console.log(category)
-// var page_data = {{ Js::from($sticker) }};
-//   let gg =  page_data.filter((ele)=>{
-//        return ele.category == category
-//     })
-//     console.log(gg)
-//     for(key in gg){
-//       console.log(key)
-//     var a = document.createElement('img')
-//     a.src = "{{URL::to('storage/images/'.$stk->product_image)}}"
-//     a.id = key+'img'
-//     a.className = "img-size"
-//     a.draggable="true"
-//     // a.ondragstart="onDragStart(event);"
-//     a.addEventListener("ondragstart",onDragStart(event))
-//     let parent = document.getElementById('img-i')
-//     parent.appendChild(a)
+  
+
+function chek(category){
+  console.log(category)
+  let prntNode = document.getElementById("img-i")
+  var first = prntNode.firstElementChild;
+        while (first) {
+            first.remove();
+            first = prntNode.firstElementChild;
+        }
+   var page_data = {{ Js::from($sticker) }};
+  let gg =  page_data.filter((ele)=>{
+       return ele.category == category
+    })
+    console.log(gg)
+    for(key in gg){
+      console.log(key)
+    var a = document.createElement('img')
+    a.src = "{{URL::to('storage/images/'.$stk->product_image)}}"
+    a.id = key
+    a.className = "img-size"
+    a.draggable="true"
+    // a.ondragstart="onDragStart(event);"
+    a.addEventListener("ondragstart",onDragStart(event))
+    let parent = document.getElementById('img-i')
+    parent.appendChild(a)
     
-//     }
-// }
+    }
+}
 
 
 

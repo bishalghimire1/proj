@@ -10,7 +10,7 @@
                 <div class="col-xl-12">
                     <div class="auth-form">
                         <div class="text-center mb-3">
-                            <a href="#">
+                            <a href="{{route('user/home')}}">
                                 <img src="{{ URL::to('assets/images/logo.png') }}" alt="">
                             </a>
                         </div>

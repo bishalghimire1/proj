@@ -34,14 +34,14 @@
                    
                 </ul>
             </li>
-            <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+            <!-- <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
                 <i class="flaticon-072-printer"></i>
                 <span class="nav-text">Forms</span>
             </a>
             <ul aria-expanded="false">
                 <li><a href="{{ route('form/input/new') }}">Form Input</a></li>
             </ul>
-        </li>
+        </li> -->
         </ul>
     </div>
 </div>
