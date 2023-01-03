@@ -48,7 +48,7 @@
 <div class="row align-items-center">
   <div class="col-lg-2 col-6">
     <a href="#" class="brand-wrap">
-      ShareWare Nepal
+      Punk
     </a> <!-- brand-wrap.// -->
   </div>
   <div class="col-lg-6 col-12 col-sm-12">
@@ -71,10 +71,10 @@
         
         <div class="text">
           
-          <div> 
+          <!-- <div> 
             <a href="{{route('login')}}">Sign in</a> |  
             <a href="#"> Register</a>
-          </div>
+          </div> -->
         </div>
       </div>
     </div> <!-- widgets-wrap.// -->
@@ -396,12 +396,12 @@
 
     <section class="footer-bottom row">
       <div class="col-md-2">
-        <p class="text-muted">   2021 Company name </p>
+        <p class="text-muted">   2021 Punk</p>
       </div>
       <div class="col-md-8 text-md-center">
-        <span  class="px-2">info@com</span>
+        <span  class="px-2">punk@gmail.com</span>
         <span  class="px-2">+000-000-0000</span>
-        <span  class="px-2">Street name 123, ABC</span>
+        <span  class="px-2">Anamnagar,KTM</span>
       </div>
       <div class="col-md-2 text-md-right text-muted">
         <i class="fab fa-lg fa-cc-visa"></i> 

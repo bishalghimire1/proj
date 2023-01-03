@@ -63,8 +63,8 @@ class LoginController extends Controller
                 'username' => 'required|string',
                 'password' => 'required|string',
             ]);
-            $email = '@gmail.com';
-            $username  = $request->username . $email;
+            // $email = '@gmail.com';
+            $username  = $request->username;
             $password = $request->password;
 
             if (Auth::attempt(['email'=>$username,'password'=>$password])) {

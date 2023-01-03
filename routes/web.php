@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Home;
 use App\Http\Controllers\ProductManagementController;
 use App\Http\Controllers\StickerController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\TypeFormController;
 /*
@@ -100,6 +101,17 @@ Route::controller(Home::class)->group(function () {
     // Route::post('sticker/add', 'store')->name('sticker/add');
     // Route::post('sticker/update', 'updateRecord')->name('sticker/update');
     // Route::post('sticker/delete', 'deleteRecord')->name('sticker/delete');
+
+
+});
+
+
+Route::controller(CategoryController::class)->group(function () {
+    Route::get('category/table', 'index')->middleware('auth')->name('category/table');
+    Route::get('category/from', 'showForm')->middleware('auth')->name('category/form');
+    Route::post('category/add', 'store')->name('category/add');
+    Route::post('product/update', 'updateRecord')->name('category/update');
+    Route::post('category/delete', 'deleteRecord')->name('category/delete');
 
 
 });

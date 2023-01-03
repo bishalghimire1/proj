@@ -26,8 +26,9 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
                 <ul aria-expanded="false">
-                @if (Session::get('role_name')== 'Super Admin')
+                @if (Session::get('role_name')== 'Admin')
                     <li><a href="{{ route('user/table') }}">User Management</a></li>
+                    <li><a href="{{route('category/table')}}">Category Management</a></li>
                 @endif
                     <li><a href="{{route('product/table')}}">Product Management</a></li>
                     <li><a href="{{route('sticker/table')}}">Sticker Management</a></li>

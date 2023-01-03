@@ -46,11 +46,15 @@
   }
   
   .example-dropzone {
-    /* background-color: #6DB65B; */
+    background-image:url('{{URL::to('storage/images/'.$product[0]->product_image)}}');
     flex-basis: 100%;
     flex-grow: 1;
     padding: 10px;
     border:1px solid #eeeeee;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    min-height:30vh;
+    max-height:50vh;
   }
 
   img{
@@ -130,7 +134,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-2 col-6">
                         <a href="#" class="brand-wrap">
-                            ShareWare Nepal
+                            Punk
                         </a> <!-- brand-wrap.// -->
                     </div>
                     <div class="col-lg-6 col-12 col-sm-12">
@@ -153,10 +157,10 @@
                                 
                                 <div class="text">
                                   
-                                    <div>
+                                    <!-- <div>
                                         <a href="route{{'login'}}">Sign in</a> |
                                         <a href="#"> Register</a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div> <!-- widgets-wrap.// -->
@@ -209,8 +213,8 @@
              @endforeach
              
         </div>
-        <div  class="example-dropzone" ondragover="onDragOver(event)"ondrop="onDrop(event)">
-         <img src="{{URL::to('storage/images/'.$product[0]->product_image)}}" > 
+        <div  class="example-dropzone" ondragover="onDragOver(event)"ondrop="onDrop(event)" >
+         <!-- <img src="{{URL::to('storage/images/'.$product[0]->product_image)}}" >  -->
         </div>
       </div>
       <div style="display:flex;justify-content:center; margin-top:3rem">
@@ -218,6 +222,8 @@
       </div>
     </div>
         <!-- <div id="img-i"></div> -->
+
+        
 
 </body>
 <script>
